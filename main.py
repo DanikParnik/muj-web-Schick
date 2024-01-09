@@ -1,16 +1,23 @@
-# This is a sample Python script.
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
+presents = ["auto", "pc", "panenka", "vysavač", "jídlo", "auto", "vysavač"]
+names = ["Petr", "Marie", "Káťa", "Maminka", "Ivan"]
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+unique_presents = set(presents)
+print(unique_presents)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+name_to_present = dict(zip(names, presents))
+
+for name, presents in zip(names, presents):
+    print(f"{name} dostane {presents}")
+
+
+user_input = input("Zadej jméno: ")
+
+
+if user_input in name_to_present:
+    selected_present = name_to_present[user_input]
+    print(f"{user_input} dostane {selected_present}")
+else:
+    print(f"Omlouváme se, ale pro '{user_input}' nemáme doporučení na dárek.")
+
